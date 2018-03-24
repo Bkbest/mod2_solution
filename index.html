@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="Assignment">
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="angular.min.js">
+    </script>
+    <script type="text/javascript" src="app.js">
+    </script>
+    <title>this is second assignment</title>
+  </head>
+  <body>
+<h1>This is assignment 2</h1>
+<h2>To buy</h2>
+<div ng-controller="myController as instance">
+<ol>
+  <li ng-repeat="item in instance.Item">buy {{item.quantity}} {{item.name}} <button ng-click="instance.removeItem($index);">Bought!</buttton></li>
+</ol>
+<div ng-if=!instance.Item.length>Everything is bought</div>
+</div>
+<div ng-controller="mySecondController as instance2">
+<h2>Already Bought</h2>
+
+<ol>
+  <li ng-repeat="item in instance2.Item">bought {{item.quantity}} {{item.name}} </li>
+</ol>
+<div ng-if=!instance2.Item.length>Nothing bought yet</div>
+</div>
+</div>
+
+  </body>
+</html>
